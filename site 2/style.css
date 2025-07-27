@@ -1,0 +1,214 @@
+/*
+ * Custom stylesheet for 阳韦的文学艺术网站
+ *
+ * The palette and typography used throughout this site reflect the surreal,
+ * industrial and introspective qualities of 阳韦的诗歌。A dark background
+ * provides the stage for luminous text and vivid artwork, while accent
+ * colours draw the eye to headings and links. Responsive layout ensures
+ * the content remains accessible on a variety of devices.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --bg-color: #0d0d0d;
+  --surface-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --muted-color: #888888;
+  --primary-color: #c84b31;
+  --link-hover: #e76f51;
+  --max-width: 960px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Serif SC', 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation bar */
+nav {
+  width: 100%;
+  background-color: rgba(13, 13, 13, 0.95);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 18px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--link-hover);
+}
+
+/* Hero section on the home page */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background: url('images/surreal1.jpg') no-repeat center center/cover;
+  position: relative;
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.hero .content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin: 0 0 12px;
+  letter-spacing: 0.1em;
+  color: var(--primary-color);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--text-color);
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* Generic section styling */
+.section {
+  padding: 60px 12%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--primary-color);
+}
+
+.section p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-color);
+  margin-bottom: 1em;
+  line-height: 1.8;
+}
+
+/* Poems styling */
+.poem {
+  margin-bottom: 48px;
+}
+
+.poem h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+.poem .text {
+  white-space: pre-wrap;
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+}
+
+/* Gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+figure figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--muted-color);
+  text-align: center;
+}
+
+/* About page styling */
+.about {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.about h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.about p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 1em;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--surface-color);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted-color);
+  border-top: 1px solid #222;
+}
+
+.footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
